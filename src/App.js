@@ -1,26 +1,40 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { Component, lazy, Suspense } from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { Navbar, NavbarBrand, NavItem, Nav, Collapse } from 'reactstrap';
+
 import './App.css';
+
+const ItemIndex = lazy(() => import('./items/ItemIndex'));
+const ItemForm = lazy(() => import('./items/ItemForm'));
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router>
+        <Suspense fallback={<h3>Preparing...</h3>}>
+          <Navbar color="light" light expand="md">
+            <NavbarBrand href="/">Price monitoring</NavbarBrand>
+            <Collapse isOpen={true} navbar>
+              <Nav className="ml-auto" navbar>
+                <NavItem>
+                  <Link to="/">Item List</Link>
+                </NavItem>
+                <NavItem>
+                  <Link to="/item/add">Add New Item</Link>
+                </NavItem>
+              </Nav>
+            </Collapse>
+          </Navbar>
+          <Switch>
+            <Route exact path="/">
+              <ItemIndex />
+            </Route>
+            <Route exact path="/item/add">
+              <ItemForm />
+            </Route>
+          </Switch>
+        </Suspense>
+      </Router>
     );
   }
 }
