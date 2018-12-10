@@ -1,4 +1,15 @@
+# Limitless GUI
+
+A showcase for price monitoring apps. This is the frontend. 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Prerequisite
+
+Make sure to setup and run [API](https://github.com/glenn-pratama/limitless-api) before starting this apps.
+
+## Getting started
+
+Run `yarn` to install all necessary package
 
 ## Available Scripts
 
@@ -26,7 +37,3 @@ The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-## Prerequisite
-
-Make sure to run [API](https://github.com/glenn-pratama/limitless-api) before starting this apps.
