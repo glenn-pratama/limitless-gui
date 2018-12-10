@@ -1,7 +1,9 @@
 # Limitless GUI
 
 A showcase for price monitoring apps. This is the frontend. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 Use [React Strap](https://reactstrap.github.io/) for components.
 
 ## Prerequisite
